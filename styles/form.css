@@ -1,0 +1,148 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent-color: #7672ff;
+    --base-color:white;
+    --text-color:#2E2B41;
+    --input-color:#F3F0FF;
+    --incorrect-color:#f06272;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+
+body {
+    min-height: 90vh;
+}
+
+.wrapper {
+    background-color: var(--base-color);
+    height: 90vh;
+    width: 40% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+
+}
+
+form {
+    width: max(300px , 100%);
+    margin: 20px 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+form label {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+form input {
+    min-width: 0;
+    flex-grow: 1;
+    height: 50px;
+    font: inherit;
+    padding: 1em;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--input-color);
+    outline: none;
+    transition: all 0.3s;
+}
+
+form input:hover {
+    border: 2px solid var(--accent-color);
+}
+form input:focus {
+    border: 2px solid var(--text-color);
+}
+
+
+div:has(input:focus) > label {
+    background-color: var(--text-color);
+}
+
+input::placeholder {
+    color: var(--text-color);
+}
+button {
+    margin: 10px 0 30px 0;
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: var(--accent-color);
+    border-radius: 50px;
+    color: var(--base-color);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.4s;
+}
+
+button:hover {
+    background-color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width:300px){
+    form{
+        width: 220px ;
+    }
+}
+
+
+.incorrect label {
+    background-color: var(--incorrect-color);
+}
+
+.incorrect input {
+    border: 2px solid var(--incorrect-color);
+}
+
+
+#errors-mess {
+    color: var(--incorrect-color);
+}
